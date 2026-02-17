@@ -7,7 +7,12 @@
   "type": "module",
   "private": "true",
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky",
+    "start:fintech": "cd fintech-api && docker-compose up",
+    "stop:fintech": "cd fintech-api && docker-compose down",
+    "restart:fintech": "cd fintech-api && docker-compose restart",
+    "build:fintech": "cd fintech-api && docker-compose build",
+    "logs:fintech": "cd fintech-api && docker-compose logs -f"
   },
   "devDependencies": {
     "@commitlint/cli": "20.4.1",
