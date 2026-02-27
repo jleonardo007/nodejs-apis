@@ -1,20 +1,10 @@
 {
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "tests",
-    "**/*.spec.ts",
-    "**/*.test.ts"
-  ],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "tests", "**/*.spec.ts", "**/*.test.ts"],
   "compilerOptions": {
     "target": "ES2022",
     "module": "commonjs",
-    "lib": [
-      "ES2022"
-    ],
+    "lib": ["ES2022"],
     "outDir": "./dist",
     "rootDir": "./src",
     "removeComments": true,
@@ -40,54 +30,38 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
-      "@config/*": [
-        "src/config/*"
-      ],
-      "@constants/*": [
-        "src/constants/*"
-      ],
-      "@controllers/*": [
-        "src/controllers/*"
-      ],
-      "@database/*": [
-        "src/database/*"
-      ],
-      "@decorators/*": [
-        "src/decorators/*"
-      ],
-      "@entities/*": [
-        "src/entities/*"
-      ],
-      "@exceptions/*": [
-        "src/exceptions/*"
-      ],
-      "@jobs/*": [
-        "src/jobs/*"
-      ],
-      "@middlewares/*": [
-        "src/middlewares/*"
-      ],
-      "@queues/*": [
-        "src/queues/*"
-      ],
-      "@repositories/*": [
-        "src/repositories/*"
-      ],
-      "@routes/*": [
-        "src/routes/*"
-      ],
-      "@services/*": [
-        "src/services/*"
-      ],
-      "@types/*": [
-        "src/types/*"
-      ],
-      "@utils/*": [
-        "src/utils/*"
-      ],
-      "@validators/*": [
-        "src/validators/*"
-      ]
+      "@config": ["src/config/index"],
+      "@config/*": ["src/config/*"],
+      "@constants": ["src/constants/index"],
+      "@constants/*": ["src/constants/*"],
+      "@controllers": ["src/controllers/index"],
+      "@controllers/*": ["src/controllers/*"],
+      "@database": ["src/database/index"],
+      "@database/*": ["src/database/*"],
+      "@decorators": ["src/decorators/index"],
+      "@decorators/*": ["src/decorators/*"],
+      "@entities": ["src/entities/index"],
+      "@entities/*": ["src/entities/*"],
+      "@exceptions": ["src/exceptions/index"],
+      "@exceptions/*": ["src/exceptions/*"],
+      "@jobs": ["src/jobs/index"],
+      "@jobs/*": ["src/jobs/*"],
+      "@middlewares": ["src/middlewares/index"],
+      "@middlewares/*": ["src/middlewares/*"],
+      "@queues": ["src/queues/index"],
+      "@queues/*": ["src/queues/*"],
+      "@repositories": ["src/repositories/index"],
+      "@repositories/*": ["src/repositories/*"],
+      "@routes": ["src/routes/index"],
+      "@routes/*": ["src/routes/*"],
+      "@services": ["src/services/index"],
+      "@services/*": ["src/services/*"],
+      "@appTypes": ["src/types/index"],
+      "@appTypes/*": ["src/types/*"],
+      "@utils": ["src/utils/index"],
+      "@utils/*": ["src/utils/*"],
+      "@dtos": ["src/dtos/index"],
+      "@dtos/*": ["src/dtos/*"]
     }
   }
 }

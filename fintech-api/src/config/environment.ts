@@ -45,9 +45,18 @@ const envSchema = z.object({
     .pipe(z.boolean())
     .default(true),
 
+  // Cookie config
+  COOKIE_HTTP_ONLY: z.coerce.boolean(),
+  COOKIE_SECURE: z.coerce.boolean(),
+  COOKIE_DOMAIN: z.string().min(1),
+  COOKIE_SAME_SITE: z.enum(['strict', 'lax', 'none']),
+  ACCESS_COOKIE_MAX_AGE: z.coerce.number().positive(),
+  REFRESH_COOKIE_MAX_AGE: z.coerce.number().positive(),
+
   // Encryption
   ENCRYPTION_KEY: z.string().length(32, 'ENCRYPTION_KEY must be exactly 32 characters'),
   ENCRYPTION_ALGORITHM: z.enum(['aes-256-cbc', 'aes-256-gcm']).default('aes-256-cbc'),
+  SALT_ROUNDS: z.coerce.number().int().positive().default(10),
 
   // Pagination
   DEFAULT_PAGE_SIZE: z.coerce.number().int().positive().default(20),
