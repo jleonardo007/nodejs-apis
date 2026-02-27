@@ -1,8 +1,13 @@
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import { logger } from '../config/logger';
 import { BaseException } from '../exceptions';
 
-export const errorHandler = (error: Error | BaseException, req: Request, res: Response) => {
+export const errorHandler = (
+  error: Error | BaseException,
+  req: Request,
+  res: Response,
+  _next: NextFunction
+) => {
   logger.error('Error:', {
     message: error.message,
     stack: error.stack,
