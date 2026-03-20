@@ -7,8 +7,9 @@ import {
   DeleteDateColumn,
   OneToMany,
 } from 'typeorm';
+
 import { IdentificationType, AccountStatus, RiskLevel } from '@appTypes';
-import { Role, Session } from '@entities';
+import { Role, Session, BalanceAccount, Transaction } from '@entities';
 
 @Entity()
 export class User {
@@ -174,4 +175,16 @@ export class User {
     nullable: true,
   })
   totalTransactionVolume?: number | null;
+
+  @OneToMany(() => BalanceAccount, (account) => account.user)
+  balanceAccounts: BalanceAccount[];
+
+  @OneToMany(() => BalanceAccount, (account) => account.frozenBy)
+  frozenAccounts: BalanceAccount[];
+
+  @OneToMany(() => Transaction, (transaction) => transaction.sender)
+  sentTransactions: Transaction[];
+
+  @OneToMany(() => Transaction, (transaction) => transaction.receiver)
+  receivedTransactions: Transaction[];
 }
