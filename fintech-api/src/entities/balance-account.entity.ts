@@ -57,7 +57,7 @@ export class BalanceAccount {
     type: 'decimal',
     precision: 15,
     scale: 2,
-    asExpression: 'available_balance + held_balance + pending_balance',
+    asExpression: 'balance + held_balance + pending_balance',
     generatedType: 'STORED',
     insert: false,
     update: false,
